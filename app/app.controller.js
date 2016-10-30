@@ -22,7 +22,7 @@
       vm.timeTaken = undefined;
       vm.generatedList.length = 0;
       if (angular.isNumber(vm.nbRepeat) && vm.template === ""){
-        console.log("Erreur dans les paramètres ("+vm.nbRepeat+"/"+vm.template+")");
+        vm.timeTaken = "Configuration form error ("+vm.nbRepeat+"/"+vm.template+")";
         return;
       }
       for (var i = 0; i < vm.nbRepeat; i++) {

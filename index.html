@@ -10,22 +10,22 @@
 <body ng-controller="AppController as appCtrl">
   <div class="header">
     <div class="form">
-      <section>Config</section>
+      <section>Configuration</section>
       <div>
-        <label>Nombre de repeat :</label>
+        <label>Repeat times :</label>
         <input type="number" min="1" max="99999999999999" ng-model="appCtrl.nbRepeat"/>
       </div>
       <div>
-        <label>Contenu du repeat :</label>
+        <label>Repeat content:</label>
         <textarea ng-model="appCtrl.template">
         </textarea>
       </div>
       <div class="submitBtn">
-        <button ng-click="appCtrl.generate()">Générer</button>
+        <button ng-click="appCtrl.generate()">Generate</button>
       </div>
     </div>
     <div class="result" ng-show="appCtrl.timeTaken !== undefined">
-      <section>Résultat</section>
+      <section>Result</section>
       {{appCtrl.timeTaken}} ms
     </div>
   </div>
