@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>angular-boilerplate</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+<body ng-controller="AppController as appCtrl">
+  <div class="header">
+    <div class="form">
+      <section>Config</section>
+      <div>
+        <label>Nombre de repeat :</label>
+        <input type="number" min="1" max="99999999999999" ng-model="appCtrl.nbRepeat"/>
+      </div>
+      <div>
+        <label>Contenu du repeat :</label>
+        <textarea ng-model="appCtrl.template">
+        </textarea>
+      </div>
+      <div class="submitBtn">
+        <button ng-click="appCtrl.generate()">Générer</button>
+      </div>
+    </div>
+    <div class="result" ng-show="appCtrl.timeTaken !== undefined">
+      <section>Résultat</section>
+      {{appCtrl.timeTaken}} ms
+    </div>
+  </div>
+  <div class="content">
+    <div ng-repeat="row in appCtrl.generatedList">
+      <dynamic-template content="row.template"></dynamic-template>
+    </div>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/app.config.js"></script>
+  <script src="app/app.controller.js"></script>
+  <script src="app/dynamic-template.directive.js"></script>
+</body>
+</html>
